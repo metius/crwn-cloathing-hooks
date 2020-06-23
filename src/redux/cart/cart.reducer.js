@@ -33,6 +33,12 @@ const cartReducer = ( state = INITIAL_STATE, action ) => {
           cartItem => cartItem.id !== action.payload.id //return all the items when they don't match with the passed item
         )
       };
+    
+    case CartActionTypes.CLEAR_CART:
+      return {
+        ...state,
+        cartItems: []
+      };
       
     default:
       return state;
